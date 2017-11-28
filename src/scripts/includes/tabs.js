@@ -1,8 +1,22 @@
-var gallery = require('./gallery.js');
+const video = require('./video.js');
+const $ = require('jquery');
 
 (function() {
-  // ... some module code
+  const $tabLinks = $('.js-tabs-link');
+  const $tabsContent = $('.js-tabs-content');
 
-  // get instance from other module
-	console.log(gallery.galleryObject);
+  $tabLinks.on('click', function(e) {
+    e.preventDefault();
+
+    const $this = $(this);
+    const index = $this.parent().index();
+
+    video.checkVideoState();
+
+    $tabLinks.filter('.active').removeClass('active');
+    $this.addClass('active');
+
+    $tabsContent.filter('.active').removeClass('active');
+    $tabsContent.eq(index).addClass('active');
+  });
 })();

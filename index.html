@@ -2,9 +2,48 @@
 <html>
 <head>
 	<title>Defa webpack</title>
+  <style>
+    .tabs__items {
+      display: flex;
+    }
+    .tabs__item {
+      margin-right: 60px;
+    }
+    .tabs__link.active {
+      border-bottom: 3px solid red;
+    }
+    .tabs__content {
+      display: none;
+    }
+    .tabs__content.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-
-	<script src="public/scripts/bundle.js"></script>
+  <div class="tabs">
+    <ul class="tabs__items">
+      <li class="tabs__item">
+        <a href="" class="tabs__link js-tabs-link active">Tab 1</a>
+      </li>
+      <li class="tabs__item">
+        <a href="" class="tabs__link js-tabs-link">Tab 2</a>
+      </li>
+      <li class="tabs__item">
+        <a href="" class="tabs__link js-tabs-link">Tab 3</a>
+      </li>
+    </ul>
+    <div class="tabs__content js-tabs-content active">
+      <div id="player"></div>
+    </div>
+    <div class="tabs__content js-tabs-content">
+      <p>tab 2</p>
+    </div>
+    <div class="tabs__content js-tabs-content">
+      <p>tab 3</p>
+    </div>
+  </div>
+  
+  <script src="public/scripts/bundle.js"></script>
 </body>
 </html>
